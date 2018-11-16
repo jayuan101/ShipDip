@@ -1,0 +1,87 @@
+package shop;
+public class Ship {
+    private String name;
+    private String year;
+    
+    public Ship(){
+        name = "Lolipop";
+        year = "1960";
+    }
+    public String getname(){
+        return name;    
+    }
+    public String getyear(){
+        return year;
+    }
+    public void setname(String a){
+        name = a;
+    }
+    public void setyear(String a){
+        year = a;
+    }
+    public String toString(){
+        return "Name: " + name
+                +"\nYear Built: " + year
+                + "\n------------------------------";
+    }
+}
+
+
+
+package shop;
+public class CruiseShip extends Ship{
+    private int passengers;
+    
+    public CruiseShip(){
+        setname("Disney Magic");
+        passengers = 2400;
+    }
+    public int getpassengers(){
+        return passengers;
+    }
+    public void setpassengers(int a){
+        passengers = a;
+    }
+    public String toString(){
+        return "Name: " + getname()
+                +"\nMaximum Passengers: " + passengers
+                + "\n------------------------------"; 
+    }
+}
+
+
+
+package shop;
+public class CargoShip extends Ship{
+    private int cargo;
+    
+    public CargoShip(){
+        setname("Black Pearl");
+        cargo = 50000;
+    }
+    public int getcargo(){
+        return cargo;
+    }
+    public void setcargo(int a){
+        cargo = a;
+    }
+    public String toString(){
+        return "Name: " + getname()
+                +"\nCargo Capacity: " + cargo + " tons"
+                + "\n------------------------------";
+    }
+}
+
+
+
+package shop;
+public class Shop {
+    public static void main(String[] args) {
+        Ship shop[] = new Ship[3];
+        shop[0] = new Ship();
+        shop[1] = new CruiseShip();
+        shop[2] = new CargoShip();
+        for(int i = 0; i < 3; i++)
+            System.out.println(shop[i]);
+    }    
+}
